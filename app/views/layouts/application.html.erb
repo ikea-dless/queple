@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta content="text/html" charset="utf-8" http-equiv="content-type">
+  <meta name="viewport" content="width=device-width initial-scale=1">
   <title>Queple</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media:'all','data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
+<body style="padding-top: 90px">
+  <%= render 'layouts/header' %>
+
+<div class="ui container">
+<%= render 'layouts/message' %>
 <%= yield %>
 
 </body>
