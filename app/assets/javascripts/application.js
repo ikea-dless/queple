@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require_tree .
 //= require semantic-ui
+
+ready = function() {
+    $('.message').on('click', '.close', function() {
+        $(this).closest('.message').transition('fade');
+    })};
+$('.ui.accordion').accordion();
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

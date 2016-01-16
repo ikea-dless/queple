@@ -1,2 +1,13 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<%= @question.title %>
+<%= @question.body %>
+<% @answers.each do |answer| %>
+  <%= answer.user.email %>
+  <%= answer.body %>
+<% end %>
+
+<%= form_for @answer, url: answers_path, html: { class: 'ui form' } do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.hidden_field :question_id %>
+  <%= f.submit class: 'ui right floated green button' %>
+<% end %>
