@@ -1,38 +1,33 @@
 
-<body>
 
 <div class="ui middle aligned center aligned grid">
   <div class="column">
-
+    <%= devise_error_messages! %>
     <h2 class="ui teal image header">ログイン</h2>
-    <form class="ui form" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="3SJb43L6zIr7jeZglsM2VPv9YpMNKlor4646TWhg3hP5N+RaTZVC5XgrcAJ0ZfPfKBZod3SA/PCrsdSZieQ7Kw==">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'ui form' }) do |f| %>
 
-      <div class="field">
-        <div class="ui left icon input">
-          <i class="user icon"></i>
-          <input autofocus="autofocus" placeholder="メールアドレス" type="email" value="" name="user[email]" id="user_email">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <%= f.email_field :email, autofocus: true, placeholder: 'メールアドレス' %>
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <div class="ui left icon input">
-          <i class="lock icon"></i>
-          <input autocomplete="off" placeholder="パスワード" type="password" name="user[password]" id="user_password">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <%= f.password_field :password, autocomplete: "off", placeholder: 'パスワード' %>
+          </div>
         </div>
-      </div>
-      <div class="ui checkbox">
-        <input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
-        <label>ログイン状態を保存する</label>
-      </div>
-      <input type="submit" name="commit" value="ログイン" class="ui fluid large blue submit button">
+        <div class="ui checkbox">
+          <input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
+          <label>ログイン状態を保存する</label>
+        </div>
+        <%= f.submit 'ログイン', class: 'ui fluid large blue submit button' %>
 
-    </form>    <div class="ui message">
-
-    <a href="/users/sign_up">Sign up</a><br>
-
-    <a href="/users/password/new">Forgot your password?</a><br>
-  </div>
+    <% end %>
+    <div class="ui message">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
-
-</body>
