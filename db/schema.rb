@@ -45,14 +45,13 @@ ActiveRecord::Schema.define(version: 20160116130743) do
   create_table "profiles", force: :cascade do |t|
     t.string   "name",         limit: 255
     t.date     "birthday"
-    t.integer  "sex",          limit: 4
+    t.integer  "sex",          limit: 1
     t.string   "town",         limit: 255
-    t.string   "married",      limit: 255
-    t.string   "integer",      limit: 255
+    t.integer  "marry",        limit: 1
     t.string   "avatar",       limit: 255
     t.text     "biography",    limit: 65535
     t.string   "homepage",     limit: 255
-    t.integer  "special_erea", limit: 4
+    t.integer  "special_erea", limit: 1
     t.integer  "user_id",      limit: 4,     null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
