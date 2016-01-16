@@ -1,5 +1,10 @@
 class QuestionsController < ApplicationController
   def show
+    question_id = params[:id]
+    @question = Question.find_by(id: question_id)
+    @answer = Answer.new
+    @answer.question_id = question_id
+    @answers = Answer.where(question_id: question_id)
   end
 
   def new
