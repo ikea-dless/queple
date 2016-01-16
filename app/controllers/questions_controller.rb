@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!
   def show
     question_id = params[:id]
     @question = Question.find_by(id: question_id)
