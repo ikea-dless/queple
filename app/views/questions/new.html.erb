@@ -3,7 +3,7 @@
   <%= f.text_field :title %>
   <%= f.label :body %>
   <%= f.text_area :body %>
-  <%= f.select :genre_id, @genre %>
+  <%= f.collection_select :genre_id, @genre, :id, :name %>
 
   <%= f.submit class: 'ui right floated green button' %>
 <% end %>
