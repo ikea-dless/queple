@@ -1,0 +1,1 @@
+SPECIAL_EREAS = YAML.load(File.read(File.join(Rails.root, 'db', 'model_constants', 'special_ereas.yml')))[Rails.env]

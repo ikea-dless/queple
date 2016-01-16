@@ -1,0 +1,14 @@
+COMMON: &COM
+  1: '恋愛'
+  2: '合コン'
+  3: '医療'
+  4: 'セックス'
+
+development:
+  <<: *COM
+
+test:
+  <<: *COM
+
+production:
+  <<: *COM
