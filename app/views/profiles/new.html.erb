@@ -1,0 +1,52 @@
+<%= form_for @profile, url: profile_path, html: { class: 'ui form' } do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %>
+    <%= f.date_field :birthday, value: '1990-01-01' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %>
+    <div class="ui radio checkbox">
+      <%= f.radio_button :sex, 0 %><label for="profile_sex_0">男性</label>
+    </div>
+    <div class="ui radio checkbox">
+      <%= f.radio_button :sex, 1 %><label for="profile_sex_1">女性</label>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :marry %>
+    <div class="ui radio checkbox">
+      <%= f.radio_button :marry, 0 %><label for="profile_marry_0">未婚</label>
+    </div>
+    <div class="ui radio checkbox">
+      <%= f.radio_button :marry, 1 %><label for="profile_marry_1">既婚</label>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :town %>
+    <%= f.text_field :town %>
+  </div>
+
+  <div class="field">
+    <%= f.label :special_erea %>
+    <%= f.select :special_erea, SPECIAL_EREAS.invert %>
+  </div>
+
+  <div class="field">
+    <%= f.label :homepage %>
+    <%= f.text_field :homepage %>
+  </div>
+
+  <div class="field">
+    <%= f.label :biography %>
+    <%= f.text_area :biography %>
+  </div>
+
+  <%= f.submit class: 'ui right floated green button' %>
+<% end %>
