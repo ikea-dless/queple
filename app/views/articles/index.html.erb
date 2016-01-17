@@ -1,4 +1,19 @@
-<% @articles.each do |article| %>
-    <%= article.title %>
-    <%= article.body %>
-<% end %>
+<h2>新着コラム一覧</h2>
+<div class="ui special cards">
+  <% @articles.each do |article| %>
+  <div class="card">
+    <div class="content">
+      <a class="header"><%= article.title %></a>
+      <div class="meta">
+        <span class="date"><%= article.created_at.strftime('%Y/%m/%d') %></span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <a class="ui red tag label"><%= article.genre.name %></a>
+      </a>
+    </div>
+    <%= link_to '詳細を見る', article_path(article), class: 'ui bottom attached button' %>
+  </div>
+  <% end %>
+</div>
