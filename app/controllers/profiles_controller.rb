@@ -29,7 +29,8 @@ class ProfilesController < ApplicationController
       :marry,
       :biography,
       :homepage,
-      :special_erea
+      :special_erea,
+      :avatar
     ).tap do |w|
       w[:sex] = w[:sex].to_i if w[:sex]
       w[:marry] = w[:marry].to_i if w[:marry]
