@@ -1,10 +1,10 @@
 <h3 class="ui top attached green header">
   <%= @article.title %>
+  <a class="ui red label"><%= @article.genre.name %></a>
 </h3>
 <div class="ui padded attached segment">
   <%= @article.body %>
 </div>
-
 <h4>著者紹介</h4>
 <div class="ui link items">
   <div class="item">
