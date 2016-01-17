@@ -1,5 +1,20 @@
-<% @questions.each do |question| %>
-  <%= question.title %>
-  <%= question.body %>
-<% end %>
-<%= link_to '新規相談', new_article_path %>
+<h2>新着悩み一覧</h2>
+<div class="ui special cards">
+  <% @questions.each do |question| %>
+  <div class="card">
+    <div class="content">
+      <a class="header"><%= question.title %></a>
+      <div class="meta">
+        <span class="date"><%= question.created_at.strftime('%Y/%m/%d') %></span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <a class="ui red tag label"><%= question.genre.name %></a>
+      </a>
+    </div>
+    <%= link_to '詳細を見る', question_path(question), class: 'ui bottom attached button' %>
+  </div>
+  <% end %>
+</div>
+<%= link_to '新規相談', new_question_path, class: 'ui green button' %>
