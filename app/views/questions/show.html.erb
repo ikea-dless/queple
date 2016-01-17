@@ -1,13 +1,49 @@
-<%= @question.title %>
-<%= @question.body %>
-<% @answers.each do |answer| %>
-  <%= answer.user.email %>
-  <%= answer.body %>
-<% end %>
+<h3 class="ui top attached green header">
+  <%= @question.title %>
+</h3>
+<div class="ui padded attached segment">
+  <%= @question.body %>
+</div>
+<h4>質問者</h4>
+<div class="ui link items">
+  <div class="item">
+    <div class="ui tiny image">
+      <%= image_tag @question.user.profile.avatar.url %>
+    </div>
+    <div class="content">
+      <div class="header"><%= @question.user.profile.name %></div>
+      <div class="description">
+        <%= @question.user.profile.biography %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= form_for @answer, url: answers_path, html: { class: 'ui form' } do |f| %>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-  <%= f.hidden_field :question_id %>
-  <%= f.submit class: 'ui right floated green button' %>
+<% @answers.each do |answer| %>
+<div class="ui comments">
+  <h3 class="ui dividing header">回答</h3>
+  <div class="comment">
+    <a class="avatar">
+      <%= image_tag answer.user.profile.avatar.url %>
+    </a>
+    <div class="content">
+      <a class="author"><%= answer.user.profile.name %></a>
+      <div class="metadata">
+        <span class="date"><%= answer.created_at %></span>
+      </div>
+      <div class="text">
+        <%= answer.body %>
+      </div>
+    </div>
+  </div>
+
+  <%= form_for @answer, url: answers_path, html: { class: 'ui form' } do |f| %>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div>
+    <%= f.hidden_field :question_id %>
+    <%= f.submit class: 'ui right floated green button' %>
+  <% end %>
+</div>
 <% end %>

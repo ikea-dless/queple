@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'articles#index'
   resource :profile
   resources :questions
-  resources :answer
+  resources :answers
   resources :articles
   get 'search', to: 'articles#search'
 end
