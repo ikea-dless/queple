@@ -1,2 +1,49 @@
-<h1>Profiles</h1>
-<p>Find me in app/views/profiles/index.html.erb</p>
+<div class="ui grid">
+  <div class="five wide column">
+    <div class="ui centered card">
+      <div class="ui card">
+        <div class="image">
+          <%= image_tag @profile.avatar.url %>
+        </div>
+        <div class="content">
+          <a class="header"><%= @profile.name %></a>
+          <div class="meta">
+            <span class="date"><%= @profile.birthday.strftime("%Y年 %m月 %d日") %></span>
+          </div>
+          <div class="meta">
+            <span class="sex"><%= @profile.sex %></span>
+          </div>
+          <div class="meta">
+            <span class="address"><%= @profile.town %></span>
+          </div>
+          <div class="meta">
+            <span class=""><%= @profile.marry %></span>
+          </div>
+          <div class="meta">
+            <span class="url"><%= @profile.homepage %></span>
+          </div>
+          <div class="description">
+            <%= @profile.special_erea %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="eight wide column">
+    <div class="ui circular segment">
+      <h2 class="ui header">
+        回答数
+        <div class="sub header"><%= @count_answer %></div>
+      </h2>
+    </div>
+<%#    <div class="ui inverted circular segment">
+         <h2 class="ui inverted header">
+        ベストアンサー数
+        <div class="sub header">ベストアンサー数</div>
+      </h2>
+    </div>%>
+    <div class="ui segment">
+      <p><%= @profile.biography %></p>
+    </div>
+  </div>
+</div>

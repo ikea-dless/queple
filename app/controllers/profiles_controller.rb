@@ -3,7 +3,8 @@ class ProfilesController < ApplicationController
   skip_before_action :profile_exist?, only: [:new, :create]
 
   def show
-    @profile = Profile.find_by(user_id: current_user)
+      @profile = Profile.find_by(user_id: current_user.id)
+      @count_answer = Answer.where(user_id: current_user).count
   end
 
   def new
