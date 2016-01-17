@@ -1,2 +1,21 @@
-<%= @article.title %>
-<%= @article.body %>
+<h3 class="ui top attached green header">
+  <%= @article.title %>
+</h3>
+<div class="ui padded attached segment">
+  <%= @article.body %>
+</div>
+
+<h4>著者紹介</h4>
+<div class="ui link items">
+  <div class="item">
+    <div class="ui tiny image">
+      <%= image_tag @article.user.profile.avatar.url %>
+    </div>
+    <div class="content">
+      <div class="header"><%= @article.user.profile.name %></div>
+      <div class="description">
+        <%= @article.user.profile.biography %>
+      </div>
+    </div>
+  </div>
+</div>
