@@ -23,6 +23,10 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def index
+    @questions = Question.all
+  end
+
   private
 
   def question_params

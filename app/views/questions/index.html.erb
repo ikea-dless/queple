@@ -1,0 +1,5 @@
+<% @questions.each do |question| %>
+  <%= question.title %>
+  <%= question.body %>
+<% end %>
+<%= link_to '新規相談', new_article_path %>
