@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
+  skip_before_action :profile_exist?, only: [:new, :create]
 
   def show
     @profile = Profile.find_by(user_id: current_user)
