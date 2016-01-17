@@ -4,7 +4,7 @@
   <div class="column">
     <%= devise_error_messages! %>
     <h2 class="ui teal image header">ログイン</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'ui form' }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'ui form' }) do |f| %>
 
         <div class="field">
           <div class="ui left icon input">
