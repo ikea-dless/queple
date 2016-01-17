@@ -1,9 +1,15 @@
 <%= form_for @question, html: { class: 'ui form' } do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :body %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %>
   <%= f.text_area :body %>
-  <%= f.collection_select :genre_id, @genre, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.collection_select :genre_id, @genre, :id, :name, {prompt: 'ジャンル'}, {class: 'ui dropdown'} %>
+  </div>
 
   <%= f.submit class: 'ui right floated green button' %>
 <% end %>
