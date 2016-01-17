@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 gem 'devise'
 gem 'semantic-ui-sass'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'pry-byebug'
