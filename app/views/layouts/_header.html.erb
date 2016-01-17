@@ -1,15 +1,14 @@
 <div class="ui menu top fixed">
-<a class="item" style="color: #21BA45 !important" href="/">queple</a>
-<div class="right menu">
-<div class="item">
-<a class="ui green button" href="/users/sign_in">Login</a>
-</div>
-<div class="item">
-<form class="ui transparent left icon input" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
-<input type="text" name="q" id="q" value="" placeholder="キーワード検索">
-<i class="search icon"></i>
-</form>
-​
-</div>
-</div>
+  <a class="item" style="color: #21BA45 !important" href="/">queple</a>
+    <div class="right menu">
+      <div class="item">
+        <a class="ui green button" href="/users/sign_in">Login</a>
+      </div>
+    <div class="item">
+      <%= form_tag search_path, method: :get, class: 'ui transparent left icon input' do %>
+        <%= text_field_tag :q, '', placeholder: '恋愛コラム検索' %>
+        <i class="search icon"></i>
+      <% end %>
+    ​</div>
+  </div>
 </div>

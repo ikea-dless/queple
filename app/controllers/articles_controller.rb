@@ -22,6 +22,11 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def search
+    @articles = Article.where('body like :q OR title like :q', q: "%#{params[:q]}%")
+    render :index
+  end
+
   private
 
   def article_params
